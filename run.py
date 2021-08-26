@@ -3,8 +3,6 @@ import torch.nn as nn
 import torch
 from word2vec.dataset import (DataLoader, Word2VecDataset)
 
-
-
 words = DataLoader().read_data()
 
 number_words = len(words)
