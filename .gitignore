@@ -140,3 +140,5 @@ cython_debug/
 # project data files
 text8
 text8.zip
+text8.pairs.npy
+text8_vocabulary.npy
