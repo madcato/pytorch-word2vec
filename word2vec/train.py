@@ -9,7 +9,7 @@ def train_epoch(dataset, model, learning_rate, batch_size):
     dataloader = DataLoader(dataset, batch_size=batch_size)
     model = model.to(device)  # it's hudge important to move model to device, before creating optimizer
     loss_fn = nn.NLLLoss()
-    optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0, weight_decay=0, nesterov=False)
     size = len(dataloader.dataset)
     for batch, (X, y) in enumerate(dataloader):
         X = X.to(device)
@@ -27,7 +27,7 @@ def train_epoch(dataset, model, learning_rate, batch_size):
             loss, current = loss.item(), batch * len(X)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
-def train(dataset, model, learning_rate = 1, batch_size = 64, epochs = 5):
+def train(dataset, model, learning_rate = 1, batch_size = 64, epochs = 15):
     for t in range(epochs):
         print("")
         print(f"Epoch {t+1}\n-------------------------------")
