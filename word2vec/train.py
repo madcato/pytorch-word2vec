@@ -7,10 +7,10 @@ print('Using {} device'.format(device))
 
 def train_epoch(dataset, model, learning_rate, batch_size):
     dataloader = DataLoader(dataset, batch_size=batch_size)
+    model = model.to(device)  # it's hudge important to move model to device, before creating optimizer
     loss_fn = nn.NLLLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
     size = len(dataloader.dataset)
-    model = model.to(device)
     for batch, (X, y) in enumerate(dataloader):
         X = X.to(device)
         y = y.to(device)
