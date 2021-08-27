@@ -14,12 +14,12 @@ def train_epoch(dataset, model, learning_rate, batch_size):
     for batch, (X, y) in enumerate(dataloader):
         X = X.to(device)
         y = y.to(device)
+        optimizer.zero_grad()
         # Compute prediction and loss
         pred = model(X)
         loss = loss_fn(pred, y)
 
         # Backpropagation
-        optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
