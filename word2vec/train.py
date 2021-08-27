@@ -27,7 +27,7 @@ def train_epoch(dataset, model, learning_rate, batch_size):
             loss, current = loss.item(), batch * len(X)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
-def train(dataset, model, learning_rate = 10, batch_size = 64, epochs = 5):
+def train(dataset, model, learning_rate = 1, batch_size = 64, epochs = 5):
     for t in range(epochs):
         print("")
         print(f"Epoch {t+1}\n-------------------------------")
