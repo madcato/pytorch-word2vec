@@ -12,13 +12,10 @@ print("Number of words: %i" % (number_words) )
 
 dataset = Word2VecDataset(words)
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-print('Using {} device'.format(device))
-
 embedding_dims = 200
 vocabulary_size = dataset.vocabulary_size
 
-model = Word2VecModel(embedding_dims, vocabulary_size).to(device)
+model = Word2VecModel(embedding_dims, vocabulary_size)
 print(model)
 
 train(dataset, model)
