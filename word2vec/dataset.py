@@ -52,7 +52,7 @@ class Word2VecDataset(Dataset):
     def __getitem__(self, idx):
         """Return an item to train. Each item the imput and the output to train"""
         sample = self.data[idx]
-        return self.get_input_layer(sample[0]), self.get_input_layer(sample[1])
+        return self.get_input_layer(sample[0]), self.get_output_layer(sample[1])
 
     def prepare_data(self, word_array, max_size_vocabulary):
         """Process raw inputs into a dataset."""
@@ -115,6 +115,11 @@ class Word2VecDataset(Dataset):
         tensor = torch.zeros(self.vocabulary_size).float()
         tensor[word_idx] = 1.0
         return tensor
+
+    def get_output_layer(self, word_idx):
+        tensor = torch.zeros(1).float()
+        tensor[0] = word_idx
+        return word_idx
 
     def filter_infrequent_words(self, frequencies, max_size_vocabulary):
         print("Removing infrequent words")
