@@ -16,6 +16,7 @@ word2vec implementation using PyTroch
 ### Data parallelism
 - [Docs >  torch.nn > DataParallel](https://pytorch.org/docs/master/generated/torch.nn.DataParallel.html)
 - [PyTroch tutorial: Data Parallelism](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html)
+- [PyTroch tutorial: Getting Started With Distributed Data Parallel](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
 
 ## PyTorch Tutotials
 - [Tensors](https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html)
@@ -30,3 +31,9 @@ word2vec implementation using PyTroch
 ## Run
 
     $ python3 run.py
+
+The multi-gpu code runs only with three GPU. 
+
+To run only in one GPU, deactivate the rest by executing:
+
+    $ export CUDA_VISIBLE_DEVICES="0"
