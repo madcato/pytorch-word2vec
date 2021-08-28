@@ -13,6 +13,10 @@ word2vec implementation using PyTroch
 - [PyTorch Loss Functions: The Ultimate Guide](https://neptune.ai/blog/pytorch-loss-functions)
 - [Create your Mini-Word-Embedding from Scratch using Pytorch](https://deepscopy.com/Create_your_Mini_Word_Embedding_from_Scratch_using_Pytorch)
 
+### Data parallelism
+- [Docs >  torch.nn > DataParallel](https://pytorch.org/docs/master/generated/torch.nn.DataParallel.html)
+- [PyTroch tutorial: Data Parallelism](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html)
+
 ## PyTorch Tutotials
 - [Tensors](https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html)
 - [Datasets & Datloaders](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
